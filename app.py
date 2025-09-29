@@ -1,4 +1,3 @@
-# fixed_app.py - Fixed version untuk eager execution issue
 
 import os
 import sys
