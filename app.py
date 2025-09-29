@@ -22,6 +22,12 @@ from PIL import Image
 import logging
 from datetime import datetime
 
+app = Flask(__name__)
+CORS(app, resources={
+    r"/predict": {"origins": "*"},
+    r"/predict/base64": {"origins": "*"}
+})
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
