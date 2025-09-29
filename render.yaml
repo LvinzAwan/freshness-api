@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: freshness-api
+    env: docker
+    plan: starter   # bisa starter dulu; jika RAM kurang, naikkan
+    autoDeploy: true
+    healthCheckPath: /health
+    # Jika kamu benar-benar ingin tanpa health path, hapus baris di atas,
+    # tapi Render akan hanya cek port tanpa endpoint spesifik.
+    envVars:
+      - key: TF_CPP_MIN_LOG_LEVEL
+        value: "2"
+      - key: TF_ENABLE_UNSAFE_DESERIALIZATION
+        value: "1"
